@@ -12,9 +12,7 @@ namespace Simon.MVC
     {
         #region Property
         private RouteCollection _routeCollection;
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly",
-            Justification = "This needs to be settable for unit tests.")]
+         
         public RouteCollection RouteCollection
         {
             get
