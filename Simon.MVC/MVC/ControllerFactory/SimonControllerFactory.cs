@@ -61,7 +61,13 @@ namespace Simon.MVC
 
             //通过反射得到控制器的类型
             var type = Assembly.Load(routeAssembly.ToString()).GetType(routeNamespaces.ToString() + "." + controllerName + "Controller");
+            // 匹配一下首字母大写
+            if (type == null)
+            {
+                controllerName = controllerName.Substring(0, 1).ToUpper() + controllerName.Substring(1);
+                type = Assembly.Load(routeAssembly.ToString()).GetType(routeNamespaces.ToString() + "." + controllerName + "Controller");
 
+            }
             return type;
         }
         #endregion

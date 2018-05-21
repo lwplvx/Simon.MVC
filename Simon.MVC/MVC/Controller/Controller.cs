@@ -16,6 +16,12 @@ namespace Simon.MVC
             Type type = this.GetType();
             string actionName = requestContext.RouteData.GetRequiredString("action");
             System.Reflection.MethodInfo mi = type.GetMethod(actionName);
+            // 匹配一下首字母大写
+            if (mi == null)
+            {
+                actionName = actionName.Substring(0, 1).ToUpper() + actionName.Substring(1);
+                mi = type.GetMethod(actionName);
+            }
 
             //执行该Action方法
             var result = mi.Invoke(this, new object[] { });//调用方法
@@ -51,4 +57,4 @@ namespace Simon.MVC
         }
     }
 
-} 
+}
