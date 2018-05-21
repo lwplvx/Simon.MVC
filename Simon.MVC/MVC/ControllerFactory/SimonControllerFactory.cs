@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -36,8 +37,7 @@ namespace Simon.MVC
         //释放控制器对象
         public void ReleaseController(IController controller)
         {
-            IDisposable disposable = controller as IDisposable;
-            if (disposable != null)
+            if (controller is IDisposable disposable)
             {
                 disposable.Dispose();
             }

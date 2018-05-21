@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -41,15 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller.cs" />
-    <Compile Include="ControllerBase.cs" />
-    <Compile Include="IController.cs" />
-    <Compile Include="SimonControllerFactory.cs" />
-    <Compile Include="IControllerFactory.cs" />
+    <Compile Include="MVC\Controller\Controller.cs" />
+    <Compile Include="MVC\Controller\ControllerBase.cs" />
+    <Compile Include="MVC\Controller\IController.cs" />
+    <Compile Include="MVC\ControllerFactory\SimonControllerFactory.cs" />
+    <Compile Include="MVC\ControllerFactory\IControllerFactory.cs" />
     <Compile Include="MvcRouteHandler.cs" />
-    <Compile Include="UrlRoutingModule.cs" />
+    <Compile Include="MVC\Result\ActionResult.cs" />
+    <Compile Include="MVC\Result\ContentResult.cs" />
+    <Compile Include="MVC\Result\JsonResult.cs" />
+    <Compile Include="Routing\UrlRoutingModule.cs" />
     <Compile Include="MvcHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

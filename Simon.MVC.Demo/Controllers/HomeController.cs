@@ -5,11 +5,22 @@ using System.Web;
 
 namespace Simon.MVC.Demo.Controllers
 {
-    public class HomeController:Controller
+    public class HomeController : Controller
     {
-        public void Index()
+        public ActionResult Index()
         {
-            HttpContext.Current.Response.Write("Hello MVC");
+            //HttpContext.Current.Response.Write("Hello MVC");
+
+            return Content("Hello Simon MVC");
         }
+        public ActionResult Json()
+        {
+            return Json(new
+            {
+                Name = "Simon",
+                Remark = "Json data test"
+            });
+        }
+
     }
 }

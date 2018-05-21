@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Routing;
 
-namespace Simon.MVC
+namespace Simon.MVC.Routing
 {
     public class UrlRoutingModule : IHttpModule
     {
